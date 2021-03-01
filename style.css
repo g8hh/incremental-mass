@@ -1,0 +1,278 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    table-align: center;
+	text-align: center;
+}
+
+body {
+    color: white;
+    text-shadow: 0px 0px 7px white;
+    background-color: black;
+	overflow-x: hidden;
+	font-size: 14px;
+}
+
+table, tr {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    border: solid 3px black;
+    background-color: white;
+    font-size: 14px;
+	cursor: pointer;
+}
+
+h1 {
+    display: inline;
+	font-weight: normal;
+    font-size: 35px;
+}
+
+h2 {
+	display: inline;
+	font-weight: normal;
+    font-size: 25px;
+}
+
+.table_center {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
+
+.closed {
+    background-color: gray;
+    cursor: default;
+}
+
+.upgrade {
+    width: 250px;
+    height: 140px;
+    border: solid 3px white;
+    cursor: pointer;
+}
+
+.upgrade.gp {
+	width: 50px;
+    height: 50px;
+}
+
+.upgrade.closed {
+    background-color: darkred;
+}
+
+.achi {
+    border: solid 3px black;
+	background-size: contain;
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    border-radius: 10%;
+    padding: 5px;
+    color: black;
+    text-shadow: 0px 0px 12px white;
+    font-size: 12px;
+}
+
+.unlocked {
+    background-color: darkgreen;
+}
+
+.prestige_reset {
+	width: 200px;
+	height: 75px;
+}
+
+.normal_tab {
+	background-color: white;
+}
+
+.rage_powers_tab {
+	background-color: #dd0000;
+}
+
+.black_hole_tab {
+	background-color: black;
+	border-color: white;
+	color: white;
+}
+
+.chroma_tab {
+	background-color: black;
+	border-color: #F00;
+	color: #F00;
+	animation: chroma_color 8s infinite linear;
+}
+
+.pentogen_tab {
+	background-color: black;
+	border-color: rgb(231, 30, 238);
+	color: rgb(231, 30, 238);
+}
+
+.rank {
+	width: 225px;
+	height: 125px;
+	border: solid 3px white;
+}
+
+.chalGreek {
+	width: 300px;
+	height: 250px;
+	border: solid 3px white;
+	cursor: pointer;
+}
+
+.milestone_dm {
+	border: solid 3px white;
+	width: 150px;
+	height: 150px;
+	border-radius: 10px;
+	font-size: 12px;
+	margin: 3px;
+}
+
+.milestone_dm.can {
+	background-color: white;
+	color: black;
+}
+
+.black_hole {
+	width: 350px;
+	height: 350px;
+	border-radius: 50%;
+	border: solid 10px gold;
+	animation: black_hole_size 8s infinite;
+	background-color: black;
+	top: 30px;
+	position: relative;
+}
+
+.flex_container {
+	margin: 5px;
+	width: 80%;
+	height: 260px;
+	border: 3px solid white;
+	white-space: nowrap;
+	display: flex;
+  	flex-wrap: nowrap; 
+  	overflow: auto;
+}
+
+.flex_item {
+	border: 3px solid white;
+	width: 220px;
+	flex: 0 0 auto;
+	text-shadow: 0px 0px 0px black;
+	white-space: normal;
+}
+
+@keyframes black_hole_size {
+	0%, 100% {
+		top: 30px;
+		border: solid 10px gold;;
+	}
+	50% {
+		top: 15px;
+		border: solid 25px gold;;
+	}
+}
+
+@keyframes chroma_color {
+	0%, 100% {
+		border-color: #F00;
+		color: #F00;
+	}
+	16% {
+		border-color: #FF0;
+		color: #FF0;
+	}
+	33% {
+		border-color: #0F0;
+		color: #0F0;
+	}
+	50% {
+		border-color: #0FF;
+		color: #0FF;
+	}
+	66% {
+		border-color: #00F;
+		color: #00F;
+	}
+	83% {
+		border-color: #F0F;
+		color: #F0F;
+	}
+}
+
+.wb_border {
+	color: black;
+	-webkit-text-stroke: white;
+	-webkit-text-stroke-width: 1px;
+}
+
+[tooltip] {
+	position: relative;
+	z-index: 2;
+	white-space: pre-wrap;
+}
+
+[tooltip]:before,
+[tooltip]:after {
+	visibility: hidden;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+	opacity: 0;
+	pointer-events: none;
+	white-space: pre-wrap;
+}
+
+[tooltip]:before {
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	margin-bottom: 5px;
+	margin-left: -80px;
+	padding: 7px;
+	width: 160px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	background-color: #000;
+	background-color: hsla(0, 0%, 5%, 0.9);
+	color: #fff;
+	content: attr(tooltip);
+	text-align: center;
+	font-size: 14px;
+	line-height: 1.2;
+	transition-duration: 0.5s;
+	white-space: pre-wrap;
+}
+
+[tooltip]:after {
+	position: absolute;
+	bottom: 100%;
+	left: 50%;
+	margin-left: -5px;
+	width: 0;
+	border-top: 5px solid #000;
+	border-top: 5px solid hsla(0, 0%, 5%, 0.9);
+	border-right: 5px solid transparent;
+	border-left: 5px solid transparent;
+	content: " ";
+	font-size: 0;
+	line-height: 0;
+	transition-duration: 0.5s;
+	white-space: pre-wrap;
+}
+
+[tooltip]:hover:before,
+[tooltip]:hover:after {
+	visibility: visible;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+	opacity: 1;
+	white-space: pre-wrap;
+}
