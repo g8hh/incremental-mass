@@ -118,7 +118,7 @@ function exporty() {
 }
 
 function importy() {
-    let loadgame = prompt("Paste in your save WARNING: WILL OVERWRITE YOUR CURRENT SAVE")
+    let loadgame = prompt("粘贴你的存档。警告:将覆盖你当前的游戏进度和存档")
     if (loadgame != null) {
         load(loadgame)
     }
