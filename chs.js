@@ -130,7 +130,7 @@ var cnItems = {
 
     //原样
     'pent': 'pent',
-    'tetr': 'tetr',
+    'tetr': '三阶',
     'T.he T.hird T.ier': '第三层',
     'UY Scuti': 'UY Scuti',
     'Heavy go brr': '重走BRR',
