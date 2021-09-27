@@ -62,7 +62,6 @@ var cnItems = {
     'Tetr 15: Increase Pentogen upgrade Power based on Tetrs (+97.2%).': '三阶 15：增加基于 三阶 的 五阶 升级功率 (+97.2%)。',
     'Tetr 2: Reduce tier reqirements by 10%.': '三阶 2：将层级要求降低 10%。',
     'Tetr 27: Raise mass gain by 1.1.': '三阶 27：将质量增益提高 1.1。',
-    'Tetr 3: Mass upgrade 3 level boost this effect (+2.812e13 to level).': '三阶 3：质量升级 3 级增强此效果（+2.812e13 到等级）。',
     'Pent': '五阶',
     'Pent 3: Reduce tetr reqirements by 5%.': '五阶 3：减少 5% 的 三阶 要求。',
     'Pent 4: Mass upgrade 4 level boost this effect (+73,762,587 to level).': '五阶 4：质量升级 4 级增强此效果（+73,762,587 到等级）。',
@@ -71,9 +70,7 @@ var cnItems = {
     'Tetr 7: Increase Rank 40 softcap by 100.': '三阶 7：将 40 级软上限提高 100。',
     'Tier 10: Rank 40 effect is stronger based on tiers.': '10层：40级的效果基于层级更强。',
     'Tier 3,': '层 3,',
-    'Tier 3: Mass upgrade 2 level boost this effect (x3.827e13 to level).': '3 层：质量升级 2 级提升此效果（x3.827e13 级）。',
     'Tier 4: Reduce mass upgrade 1-3 cost scaled by 20%.': '4 层：将质量升级 1-3 成本降低 20%。',
-    'Tier 5: Gain free mass upgrade 3 levels based on ranks (+1,832 to level).': '5 层：根据等级获得 3 个免费的大规模升级等级（+1,832 等级）。',
     'Tier 512: Raise PP gain by 1.25.': '第 512 层：将 五阶力量 增益提高 1.25。',
     'Tier 7: Unlock fourth mass upgrade, called \"cheaper\".': '第 7 层：解锁第四质量升级，称为“更便宜”。',
     '{{ format(FUNCS.gains.pp()) }} per second (based on ranks).': '{{ format(FUNCS.gains.pp()) }} 每秒（基于等级）。',
@@ -88,7 +85,6 @@ var cnItems = {
     'Black Hole Extractor': '黑洞提取器',
     'Dark Matters Milestone': '暗物质里程碑',
     'Gain 10% of RP gain per second. Unlock third stored mass upgrade.': '每秒获得 愤怒力量 增益的 10%。 解锁第三次存储的质量升级。',
-    'Gain free mass upgrade 1-2 based on total Dark Matters (+1.903e148 to level).': '获得基于总暗物质的免费质量升级 1-2（+1.903e148 等级）。',
     'Gain more RP based on unspent Anti-Dark Matters.': '基于未使用的反暗物质获得更多 愤怒力量。',
     'Multiples stored mass in Black Hole effect.': '在黑洞效应中存储质量的倍数。',
     'Multiples stored mass in Black Hole gain.': '在黑洞增益中存储质量的倍数。',
@@ -160,10 +156,9 @@ var cnItems = {
     'Unlock Tetr (need more Tiers to reset for new Tetr), and button “buy max” in Black Hole Extractor, start with all mass upgrades unlocked (except fourth mass upgrade). Mass upgrades no longer buy mass.': '解锁 三阶（需要更多的 层 来重置新的 三阶），然后在 黑洞提取器 中点击“购买最大”，从解锁所有质量升级开始（第四次质量升级除外）。 质量升级不再购买质量。',
     'You can gain stored mass passive in Black Hole without extracting Black Hole.': '您可以在不提取黑洞的情况下在黑洞中获得存储的质量被动。',
     'Upgrades in Black Hole cost is divided based on Grid Powers.': '黑洞升级成本根据网格力量分配。',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
+    'Rank 40: For every rank (start at 40) multiples mass gain by 634.51, but will softcap at 100.': '等级 40：对于每个等级（从 40 开始），质量增益乘以 634.51，但将在 100 处进行软上限。',
+    'Stop Execute Black Hole': '停止执行黑洞',
+    'Tetr 15: Increase Pentogen upgrade Power based on Tetrs (+98.1%).': '三阶 15：基于 三阶 (+98.1%) 增加 五阶 升级功率。',
     '': '',
     '': '',
     '': '',
@@ -383,6 +378,7 @@ var cnExcludeWhole = [
     /^([\d\.]+)e([\d\.,]+)$/, //纯空格
     /^([\d\.]+)e([\d\.,]+) uni$/, //纯空格
     /^当前: \+([\d\.]+)e([\d\.,]+)$/, //纯空格
+    /^当前: x([\d\.]+)e([\d\.,]+)$/, //纯空格
     /^当前: \+([\d\.]+)e([\d\.,]+) uni$/, //纯空格
     /^成本：(.+) 网格力量$/, //纯空格
     /^\d+(\.\d+)?[A-Za-z]{0,2}.?\(?([+\-]?(\d+(\.\d+)?[A-Za-z]{0,2})?)?$/, //12.34M (+34.34K
@@ -417,6 +413,10 @@ var cnRegReplace = new Map([
     [/^Multiples mass upgrade 1 effect by (.+) \(additive$/, '质量提升1乘以 $1倍（附加'],
     [/^Rank 4: Unlock third upgrade. Reduce mass upgrade 2 cost scaled by 15\%. Mass upgrade 1 level boost this effect \(\+(.+) to level\).$/, '等级4：解锁第3次升级。 将 质量升级2 的成本降低15\％。 质量升级1级会增强此效果（\+$1级）。'],
     [/^Pent (.+): Mass upgrade (.+) level boost this effect (.+).$/, '五阶 $1：质量升级 $2 级增强此效果 $3。'],
+    [/^Gain free mass upgrade (.+) based on total Dark Matters (.+).$/, '获得基于总暗物质的免费质量升级 $1 $2。'],
+    [/^Tetr 3: Mass upgrade 3 level boost this effect (.+) to level).$/, '三阶 3：质量升级 3 级增强此效果（$1 到等级）。'],
+    [/^Tier 3: Mass upgrade 2 level boost this effect (.+) to level).$/, '层 3：质量升级 2 级增强此效果（$1 到等级）。'],
+    [/^Tier 5: Gain free mass upgrade 3 levels based on ranks (.+) to level).$/, '5 层：根据等级获得 3 个免费的质量升级等级（$1 级数）。'],
     [/^成本: (.+) gears$/, '成本: $1 齿轮'],
     [/^Cost: (.+) Grid Powers$/, '成本：$1 网格力量'],
     [/^Cost: (.+) PP$/, '成本：$1 五阶力量'],
