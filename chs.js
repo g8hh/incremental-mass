@@ -115,16 +115,16 @@ var cnItems = {
     'Gain more RP based on ranks.': '根据等级获得更多 愤怒力量。',
     'Gain more RP based on unspent gears.': '根据未使用的齿轮获得更多 愤怒力量。',
     'Gain RP based on unspent RP.': '根据未使用的 愤怒力量 获得 愤怒力量。',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
-    '': '',
+    'Gears gain formula is better. [log10(x+1)^0.75 → log5(x+1)^3]': '齿轮增益公式更好。 [log10(x+1)^0.75 → log5(x+1)^3]',
+    'Grid Upgrades': '网格升级',
+    'Keep Gear, RP & ADM upgrades on entering any challenge in ChallenGreek.': '在挑战希腊字母中进入任何挑战时保持装备、愤怒力量 和 反暗物质 升级。',
+    'Mass boost Grid Powers gain.': '质量提升网格力量增益。',
+    'Mass Power boosts Grid Powers gain.': '质量力量提升网格力量增益。',
+    'Mass Power can affect stored mass in Black Hole gain.': '质量力量会影响黑洞增益中存储的质量。',
+    'Mass Power is raised based on unspent Grid Powers.': '质量力量 是根据未使用的 网格力量 提高的。',
+    'Mass Powers is raised by 0.0625.': '质量力量提高了 0.0625。',
+    'Milestone': '里程碑',
+    'Multiples GP gain.': '网格 增益倍数。',
     '': '',
     '': '',
     '': '',
@@ -382,7 +382,7 @@ var cnExcludeWhole = [
     /^([\d\.]+)e([\d\.,]+) uni$/, //纯空格
     /^当前: \+([\d\.]+)e([\d\.,]+)$/, //纯空格
     /^当前: \+([\d\.]+)e([\d\.,]+) uni$/, //纯空格
-    /^成本：(.+) 电网功率$/, //纯空格
+    /^成本：(.+) 网格力量$/, //纯空格
     /^\d+(\.\d+)?[A-Za-z]{0,2}.?\(?([+\-]?(\d+(\.\d+)?[A-Za-z]{0,2})?)?$/, //12.34M (+34.34K
     /^(\d+(\.\d+)?[A-Za-z]{0,2}\/s)?.?\(?([+\-]?\d+(\.\d+)?[A-Za-z]{0,2})?\/s\stot$/, //2.74M/s (112.4K/s tot
     /^\d+(\.\d+)?(e[+\-]?\d+)?.?\(?([+\-]?(\d+(\.\d+)?(e[+\-]?\d+)?)?)?$/, //2.177e+6 (+4.01+4
@@ -416,7 +416,7 @@ var cnRegReplace = new Map([
     [/^Rank 4: Unlock third upgrade. Reduce mass upgrade 2 cost scaled by 15\%. Mass upgrade 1 level boost this effect \(\+(.+) to level\).$/, '等级4：解锁第3次升级。 将 质量升级2 的成本降低15\％。 质量升级1级会增强此效果（\+$1级）。'],
     [/^Pent (.+): Mass upgrade (.+) level boost this effect (.+).$/, '五阶 $1：质量升级 $2 级增强此效果 $3。'],
     [/^成本: (.+) gears$/, '成本: $1 齿轮'],
-    [/^Cost: (.+) Grid Powers$/, '成本：$1 电网功率'],
+    [/^Cost: (.+) Grid Powers$/, '成本：$1 网格力量'],
     [/^Cost: (.+) PP$/, '成本：$1 五阶力量'],
     [/^Cost: (.+) DM$/, '成本：$1 暗物质'],
     [/^Cost: (.+) ADM$/, '成本：$1 反暗物质'],
