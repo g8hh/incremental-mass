@@ -1644,7 +1644,7 @@ const ACHIEVEMENTS = {
     },
     45: {
         title: 'No problem here',
-        desc() { return `Transform to DM with only Tier 1.` },
+        desc() { return `仅使用第 1 层转换为 暗物质。` },
         can() { return false },
     },
     51: {
