@@ -156,9 +156,7 @@ var cnItems = {
     'Unlock Tetr (need more Tiers to reset for new Tetr), and button “buy max” in Black Hole Extractor, start with all mass upgrades unlocked (except fourth mass upgrade). Mass upgrades no longer buy mass.': '解锁 三阶（需要更多的 层 来重置新的 三阶），然后在 黑洞提取器 中点击“购买最大”，从解锁所有质量升级开始（第四次质量升级除外）。 质量升级不再购买质量。',
     'You can gain stored mass passive in Black Hole without extracting Black Hole.': '您可以在不提取黑洞的情况下在黑洞中获得存储的质量被动。',
     'Upgrades in Black Hole cost is divided based on Grid Powers.': '黑洞升级成本根据网格力量分配。',
-    'Rank 40: For every rank (start at 40) multiples mass gain by 634.51, but will softcap at 100.': '等级 40：对于每个等级（从 40 开始），质量增益乘以 634.51，但将在 100 处进行软上限。',
     'Stop Execute Black Hole': '停止执行黑洞',
-    'Tetr 15: Increase Pentogen upgrade Power based on Tetrs (+98.1%).': '三阶 15：基于 三阶 (+98.1%) 增加 五阶 升级功率。',
     '': '',
     '': '',
     '': '',
@@ -377,10 +375,9 @@ var cnExcludeWhole = [
     /^([\d\.]+) kg$/, //纯空格
     /^([\d\.]+)e([\d\.,]+)$/, //纯空格
     /^([\d\.]+)e([\d\.,]+) uni$/, //纯空格
-    /^当前: \+([\d\.]+)e([\d\.,]+)$/, //纯空格
-    /^当前: x([\d\.]+)e([\d\.,]+)$/, //纯空格
-    /^当前: \+([\d\.]+)e([\d\.,]+) uni$/, //纯空格
+    /^当前: (.+)$/, //纯空格
     /^成本：(.+) 网格力量$/, //纯空格
+    /^成本: (.+) uni$/, //纯空格
     /^\d+(\.\d+)?[A-Za-z]{0,2}.?\(?([+\-]?(\d+(\.\d+)?[A-Za-z]{0,2})?)?$/, //12.34M (+34.34K
     /^(\d+(\.\d+)?[A-Za-z]{0,2}\/s)?.?\(?([+\-]?\d+(\.\d+)?[A-Za-z]{0,2})?\/s\stot$/, //2.74M/s (112.4K/s tot
     /^\d+(\.\d+)?(e[+\-]?\d+)?.?\(?([+\-]?(\d+(\.\d+)?(e[+\-]?\d+)?)?)?$/, //2.177e+6 (+4.01+4
@@ -404,6 +401,7 @@ var cnRegReplace = new Map([
     [/^Adds (.+) uni gained mass.$/, '增加 $1 吨的质量。'],
     [/^Adds (.+) tonne gained mass.$/, '增加 $1 吨的质量。'],
     [/^Rank ([\d\.,]+)$/, '等级 $1'],
+    [/^Tier ([\d\.,]+)$/, '层 $1'],
     [/^([\d\.]+) g$/, '$1 克'],
     [/^([\d\.]+) tonne$/, '$1 吨'],
     [/^([\d\.,]+) tonne$/, '$1 吨'],
@@ -417,6 +415,8 @@ var cnRegReplace = new Map([
     [/^Tetr 3: Mass upgrade 3 level boost this effect (.+) to level\).$/, '三阶 3：质量升级 3 级增强此效果（$1 到等级）。'],
     [/^Tier 3: Mass upgrade 2 level boost this effect (.+) to level\).$/, '层 3：质量升级 2 级增强此效果（$1 到等级）。'],
     [/^Tier 5: Gain free mass upgrade 3 levels based on ranks (.+) to level\).$/, '5 层：根据等级获得 3 个免费的质量升级等级（$1 级数）。'],
+    [/^Rank 40: For every rank \(start at 40\) multiples mass gain by (.+), but will softcap at 100.$/, '等级 40：对于每个等级（从 40 开始），质量增益乘以 $1，但将在 100 处进行软上限。'],
+    [/^Tetr 15: Increase Pentogen upgrade Power based on Tetrs (.+).$/, '三阶 15：基于 三阶 $1 增加 五阶 升级功率。'],
     [/^成本: (.+) gears$/, '成本: $1 齿轮'],
     [/^Cost: (.+) Grid Powers$/, '成本：$1 网格力量'],
     [/^Cost: (.+) PP$/, '成本：$1 五阶力量'],
