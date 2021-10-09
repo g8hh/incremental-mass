@@ -395,7 +395,7 @@ const FUNCS = {
         },
         can() { return player.mass.gte(this.caps()) },
         reset() {
-            if (this.can()) if (confirm('You wanted to perform to enter new Multiverse? Resets all previous features (except achievements). Are you ready?')) {
+            if (this.can()) if (confirm('你想通过执行进入新的多元宇宙?重置所有以前的功能(除了成就)。你准备好了吗?')) {
                 player.multiverse.number = player.multiverse.number.add(1)
                 this.doReset('mul')
             }
